@@ -11,8 +11,11 @@ docker es:
 docker pull docker.elastic.co/elasticsearch/elasticsearch:6.3.2
 
 
-nohup docker run -p 9200:9200 -e "http.host=0.0.0.0" -e "transport.host=127.0.0.1" docker.elastic.co/elasticsearch/elasticsearch:6.3.2  &
+nohup docker run -p 0.0.0.0:9200:9200 -e "http.host=0.0.0.0" -e "transport.host=127.0.0.1" docker.elastic.co/elasticsearch/elasticsearch:6.3.2  &
 
+
+
+# -e 表示配置环境变量.
 #等几秒之后,服务器来了,再curl
 
 
